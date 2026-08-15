@@ -351,7 +351,7 @@ const CONFIG = {
       options: [" A lot", "A lot a lot", "There isn't a scale big enough"],
       correct:3,
       note: "Some things can't be measured — they can only be felt, over and over again."
-    }
+    },
   ],
 
   heartsTotal: 6,
@@ -485,10 +485,13 @@ function initSite(){
           btn.classList.add('wrong');
           card.querySelector(`.quiz-opt[data-i="${item.correct}"]`).classList.add('correct');
         }
-        card.querySelector('.quiz-note').textContent = item.note || '';
+       
         const allAnswered = [...quizEl.children].every(c => c.dataset.answered);
         if(allAnswered){
           const result = document.getElementById('quizResult');
+          card.querySelector('.quiz-note').textContent = (chosen === item.correct)
+  ? (item.note || '')
+  : (item.wrongNote || "Not quite — but I love that you tried 😅");
           result.textContent = quizCorrect === CONFIG.quiz.length ? "You know us so well 💕" : "Close enough — love isn't a quiz anyway 💞";
           result.classList.add('show');
         }
