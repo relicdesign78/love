@@ -318,8 +318,8 @@ const CONFIG = {
   startDate: "2022-06-14T00:00:00",            // drives the live counter
 
   song: {
-    title: "Add Your Song Title",
-    artist: "Add Artist Name",
+    title: "song for you",
+    artist: "love you💕",
     src: "11._Bayen_Habeit (1).mp3"                                    // paste a hosted mp3/streaming-safe link here
   },
 
@@ -345,7 +345,7 @@ const CONFIG = {
       options: ["March 14, 2022", "June 14, 2022", "October 2, 2022"], // edit these to your real dates
       correct: 1, // index of the correct option above (0 = first, 1 = second, 2 = third) — change to match your real date
       note: "The date that started everything.",
-      wrongNote: "Close — but that's not the day 😉"
+      wrongNote: "Close — but that's not the day "
     },
     {
       q: "Do you love me a lot, or a lot a lot?",
@@ -489,7 +489,7 @@ function initSite(){
         }
         card.querySelector('.quiz-note').textContent = (chosen === item.correct)
           ? (item.note || '')
-          : (item.wrongNote || "Not quite — but I love that you tried 😅");
+          : (item.wrongNote || "Not quite — but I love that you tried ");
         const allAnswered = [...quizEl.children].every(c => c.dataset.answered);
         if(allAnswered){
           const result = document.getElementById('quizResult');
